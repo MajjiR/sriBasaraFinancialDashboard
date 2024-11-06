@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-from datetime import datetime, timedelta
+
 import io
 import calendar
 
@@ -84,7 +83,7 @@ def display_payment_summary_table(df, date=None):
 
 
 def main():
-    st.set_page_config(page_title="Sri Basara Fees Analytics", layout="wide")
+    st.set_page_config(page_title="School Fees Analytics", layout="wide")
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
@@ -141,7 +140,10 @@ def main():
                 if not filtered_df.empty:
                     display_payment_summary_table(filtered_df, selected_date)
                     st.write(f"Found {len(filtered_df)} records for {selected_date}")
-                    st.dataframe(filtered_df)
+                    # Specify the columns you want to display
+                    columns_to_display = [ 'Student', 'Standard/Course', 'Registration Code','Fees Paid Date', 'Payment Type', 'Paid Amount']  # Example columns
+
+                    st.dataframe(filtered_df[columns_to_display])
 
                     buffer = io.BytesIO()
                     with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
