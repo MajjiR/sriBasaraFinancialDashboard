@@ -141,7 +141,7 @@ def main():
                     display_payment_summary_table(filtered_df, selected_date)
                     st.write(f"Found {len(filtered_df)} records for {selected_date}")
                     # Specify the columns you want to display
-                    columns_to_display = [ 'Student', 'Standard/Course', 'Registration Code','Fees Paid Date', 'Payment Type', 'Paid Amount']  # Example columns
+                    columns_to_display = [ 'Student', 'Standard/Course', 'Receipt Number','Fees Paid Date', 'Payment Type', 'Paid Amount']  # Example columns
 
                     st.dataframe(filtered_df[columns_to_display])
 
