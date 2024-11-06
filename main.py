@@ -84,7 +84,7 @@ def display_payment_summary_table(df, date=None):
 
 
 def main():
-    st.set_page_config(page_title="School Fees Analytics", layout="wide")
+    st.set_page_config(page_title="Sri Basara Fees Analytics", layout="wide")
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
